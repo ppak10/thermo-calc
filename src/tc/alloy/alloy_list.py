@@ -3,7 +3,6 @@ from .alloy_properties import alloy_properties
 
 def alloy_names() -> list[str]:
     comp_rows = alloy_properties()
-    print(comp_rows)
     names: list[str] = []
     for row in comp_rows:
         name = row.get("Name")

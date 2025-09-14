@@ -26,7 +26,7 @@ def register_mcp_install(app: typer.Typer):
         if project_path:
             tc_path = Path(project_path)
         else:
-            # Path(tc.__file__) extcple:
+            # Path(tc.__file__) example:
             # /mnt/tc/GitHub/thermo-calc-agent/.venv/lib/python3.13/site-packages/tc
             # Going up 5 levels to get to the project root
             tc_path = Path(tc.__file__).parents[5]
@@ -49,7 +49,7 @@ def register_mcp_install(app: typer.Typer):
                     ]
 
                     rprint(f"[blue]Running command:[/blue] {' '.join(claude_cmd)}")
-                    subprocess.run(claude_cmd, check=True)
+                    _ = subprocess.run(claude_cmd, check=True)
 
                     if include_agent:
                         # Copies premade agent configuration to `.claude/agents`
