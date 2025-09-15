@@ -1,7 +1,7 @@
-def alloy_compositions() -> list[dict[str, str]]:
-    return [
-        {
-            "Alloys": "Ti6Al4V",
+# TODO: Make better.
+def alloy_compositions() -> dict[str, dict[str, str]]:
+    return {
+        "Ti6Al4V": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "0",
@@ -24,8 +24,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "IN718",
+        "IN718": {
             "Fe": "15",
             "Cr": "19",
             "Ni": "52.5",
@@ -48,8 +47,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "95.5",
         },
-        {
-            "Alloys": "SS316L",
+        "SS316L": {
             "Fe": "65",
             "Cr": "17",
             "Ni": "12",
@@ -72,8 +70,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "96.5",
         },
-        {
-            "Alloys": "AlSi10Mg",
+        "AlSi10Mg": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "0",
@@ -96,8 +93,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.35",
         },
-        {
-            "Alloys": "IN625",
+        "IN625": {
             "Fe": "5",
             "Cr": "22",
             "Ni": "60",
@@ -120,8 +116,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "96",
         },
-        {
-            "Alloys": "Maraging steel M300",
+        "Maraging steel M300": {
             "Fe": "67.38",
             "Cr": "0",
             "Ni": "18",
@@ -144,8 +139,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "Ti6Al4V ELI",
+        "Ti6Al4V ELI": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "0",
@@ -168,8 +162,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "SS17-4PH",
+        "SS17-4PH": {
             "Fe": "74.5",
             "Cr": "16",
             "Ni": "4",
@@ -192,8 +185,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.8",
         },
-        {
-            "Alloys": "CoCrMo",
+        "CoCrMo": {
             "Fe": "0.5",
             "Cr": "28.5",
             "Ni": "0.4",
@@ -216,8 +208,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.95",
         },
-        {
-            "Alloys": "H13 Tool Steel",
+        "H13 Tool Steel": {
             "Fe": "91",
             "Cr": "5.1",
             "Ni": "0",
@@ -240,8 +231,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100.27",
         },
-        {
-            "Alloys": "AlSi7Mg0.6",
+        "AlSi7Mg0.6": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "0",
@@ -264,8 +254,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "SS15-5PH",
+        "SS15-5PH": {
             "Fe": "74.5",
             "Cr": "15",
             "Ni": "4.5",
@@ -288,8 +277,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.8",
         },
-        {
-            "Alloys": "CuCrZr",
+        "CuCrZr": {
             "Fe": "0",
             "Cr": "1",
             "Ni": "0",
@@ -312,8 +300,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.77",
         },
-        {
-            "Alloys": "Al12Si",
+        "Al12Si": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "0",
@@ -336,8 +323,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "Copper",
+        "Copper": {
             "Fe": "0.04",
             "Cr": "0",
             "Ni": "0.015",
@@ -360,8 +346,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.975",
         },
-        {
-            "Alloys": "Hastelloy X",
+        "Hastelloy X": {
             "Fe": "18.5",
             "Cr": "21.75",
             "Ni": "45.5",
@@ -384,8 +369,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "CoCr",
+        "CoCr": {
             "Fe": "0",
             "Cr": "28.5",
             "Ni": "0",
@@ -408,8 +392,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "96.5",
         },
-        {
-            "Alloys": "Hastelloy C22",
+        "Hastelloy C22": {
             "Fe": "4",
             "Cr": "21",
             "Ni": "0",
@@ -432,8 +415,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.945",
         },
-        {
-            "Alloys": "SS254",
+        "SS254": {
             "Fe": "56.32",
             "Cr": "19.5",
             "Ni": "17.5",
@@ -456,8 +438,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "CuNi2SiCr",
+        "CuNi2SiCr": {
             "Fe": "0.15",
             "Cr": "0.35",
             "Ni": "2.5",
@@ -480,8 +461,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.9",
         },
-        {
-            "Alloys": "D2 Tool Steel",
+        "D2 Tool Steel": {
             "Fe": "83.8",
             "Cr": "12",
             "Ni": "0.45",
@@ -504,8 +484,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100.45",
         },
-        {
-            "Alloys": "SS4340",
+        "SS4340": {
             "Fe": "95.5",
             "Cr": "0.8",
             "Ni": "1.8",
@@ -528,8 +507,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.67",
         },
-        {
-            "Alloys": "Invar36",
+        "Invar36": {
             "Fe": "62.7",
             "Cr": "0.5",
             "Ni": "36",
@@ -552,8 +530,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100.2",
         },
-        {
-            "Alloys": "SS304L",
+        "SS304L": {
             "Fe": "68",
             "Cr": "19",
             "Ni": "10",
@@ -576,8 +553,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.88",
         },
-        {
-            "Alloys": "Ti grade 2",
+        "Ti grade 2": {
             "Fe": "0.3",
             "Cr": "0",
             "Ni": "0",
@@ -600,8 +576,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.3",
         },
-        {
-            "Alloys": "K500",
+        "K500": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "70.35",
@@ -624,8 +599,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "M2 Tool Steel",
+        "M2 Tool Steel": {
             "Fe": "79",
             "Cr": "4.1",
             "Ni": "0.2",
@@ -648,8 +622,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "97.93",
         },
-        {
-            "Alloys": "Ti grade 1",
+        "Ti grade 1": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "0",
@@ -672,8 +645,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "CoCr28Mo6",
+        "CoCr28Mo6": {
             "Fe": "0.75",
             "Cr": "28.5",
             "Ni": "0.5",
@@ -696,8 +668,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.85",
         },
-        {
-            "Alloys": "IN690",
+        "IN690": {
             "Fe": "9",
             "Cr": "29",
             "Ni": "60.5",
@@ -720,8 +691,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100.05",
         },
-        {
-            "Alloys": "CuCP",
+        "CuCP": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "0",
@@ -744,8 +714,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "20MnCr5",
+        "20MnCr5": {
             "Fe": "97.73",
             "Cr": "1",
             "Ni": "0",
@@ -768,8 +737,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "TiAlNbMo",
+        "TiAlNbMo": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "0",
@@ -792,8 +760,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "SS304",
+        "SS304": {
             "Fe": "68.5",
             "Cr": "19",
             "Ni": "9.25",
@@ -816,8 +783,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.68",
         },
-        {
-            "Alloys": "TiAl",
+        "TiAl": {
             "Fe": "0",
             "Cr": "2.2",
             "Ni": "0",
@@ -840,8 +806,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "HY100",
+        "HY100": {
             "Fe": "93.5",
             "Cr": "1.7",
             "Ni": "3.25",
@@ -864,8 +829,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.7",
         },
-        {
-            "Alloys": "AlSi12",
+        "AlSi12": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "0",
@@ -888,8 +852,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "CoCrF75",
+        "CoCrF75": {
             "Fe": "0",
             "Cr": "27",
             "Ni": "0",
@@ -912,8 +875,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "AZ91D",
+        "AZ91D": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "0",
@@ -936,8 +898,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "IN939",
+        "IN939": {
             "Fe": "0",
             "Cr": "22.5",
             "Ni": "48.5",
@@ -960,8 +921,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "CoCrW",
+        "CoCrW": {
             "Fe": "0",
             "Cr": "28",
             "Ni": "0",
@@ -984,8 +944,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99",
         },
-        {
-            "Alloys": "420steel-6-bronze-4",
+        "420steel-6-bronze-4": {
             "Fe": "50",
             "Cr": "7.8",
             "Ni": "0.06",
@@ -1008,8 +967,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100.48",
         },
-        {
-            "Alloys": "SS420C",
+        "SS420C": {
             "Fe": "84",
             "Cr": "13",
             "Ni": "0.5",
@@ -1032,8 +990,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100.15",
         },
-        {
-            "Alloys": "SS4130",
+        "SS4130": {
             "Fe": "98",
             "Cr": "0.95",
             "Ni": "0",
@@ -1056,8 +1013,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.97",
         },
-        {
-            "Alloys": "CuCrZrTi",
+        "CuCrZrTi": {
             "Fe": "0",
             "Cr": "0.6",
             "Ni": "0",
@@ -1080,8 +1036,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.67",
         },
-        {
-            "Alloys": "8620L Steel",
+        "8620L Steel": {
             "Fe": "97.77",
             "Cr": "0.5",
             "Ni": "0.55",
@@ -1104,8 +1059,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.995",
         },
-        {
-            "Alloys": "Al2319",
+        "Al2319": {
             "Fe": "0.3",
             "Cr": "0",
             "Ni": "0",
@@ -1128,8 +1082,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "103.64",
         },
-        {
-            "Alloys": "Iron (0.004%C)",
+        "Iron (0.004%C)": {
             "Fe": "99.99",
             "Cr": "0",
             "Ni": "0",
@@ -1152,8 +1105,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.994",
         },
-        {
-            "Alloys": "SS316",
+        "SS316": {
             "Fe": "65",
             "Cr": "17",
             "Ni": "12",
@@ -1176,8 +1128,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "96.5",
         },
-        {
-            "Alloys": "Iron (0.02%C)",
+        "Iron (0.02%C)": {
             "Fe": "99.98",
             "Cr": "0",
             "Ni": "0",
@@ -1200,8 +1151,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "TC21",
+        "TC21": {
             "Fe": "0.05",
             "Cr": "1.5",
             "Ni": "0",
@@ -1224,8 +1174,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.44",
         },
-        {
-            "Alloys": "Mar M 247",
+        "Mar M 247": {
             "Fe": "0",
             "Cr": "8.4",
             "Ni": "60",
@@ -1248,8 +1197,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "95.38",
         },
-        {
-            "Alloys": "Scalmalloy",
+        "Scalmalloy": {
             "Fe": "0.4",
             "Cr": "0",
             "Ni": "0",
@@ -1272,8 +1220,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0.74",
             "": "99.29",
         },
-        {
-            "Alloys": "W22Fe33Ni",
+        "W22Fe33Ni": {
             "Fe": "2.2",
             "Cr": "0",
             "Ni": "3.3",
@@ -1296,8 +1243,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "4140 Steel",
+        "4140 Steel": {
             "Fe": "97",
             "Cr": "1",
             "Ni": "0",
@@ -1320,8 +1266,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.75",
         },
-        {
-            "Alloys": "Tungsten-Bronze",
+        "Tungsten-Bronze": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "0",
@@ -1344,8 +1289,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "S50C",
+        "S50C": {
             "Fe": "98.5",
             "Cr": "0",
             "Ni": "0",
@@ -1368,8 +1312,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.97",
         },
-        {
-            "Alloys": "S75C",
+        "S75C": {
             "Fe": "98.2",
             "Cr": "0",
             "Ni": "0",
@@ -1392,8 +1335,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.96",
         },
-        {
-            "Alloys": "A2 Tool Steel",
+        "A2 Tool Steel": {
             "Fe": "91.4",
             "Cr": "5.125",
             "Ni": "0",
@@ -1416,8 +1358,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100.005",
         },
-        {
-            "Alloys": "S105C",
+        "S105C": {
             "Fe": "98",
             "Cr": "0",
             "Ni": "0",
@@ -1440,8 +1381,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.94",
         },
-        {
-            "Alloys": "SS316L-6-Bronze-4",
+        "SS316L-6-Bronze-4": {
             "Fe": "38",
             "Cr": "11.5",
             "Ni": "9",
@@ -1464,8 +1404,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "102.82",
         },
-        {
-            "Alloys": "TA15",
+        "TA15": {
             "Fe": "0.25",
             "Cr": "0",
             "Ni": "0",
@@ -1488,8 +1427,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.6",
         },
-        {
-            "Alloys": "SS CX",
+        "SS CX": {
             "Fe": "78.3",
             "Cr": "11",
             "Ni": "8.4",
@@ -1512,8 +1450,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "7050 alloy",
+        "7050 alloy": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "0",
@@ -1536,8 +1473,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.92",
         },
-        {
-            "Alloys": "S33C",
+        "S33C": {
             "Fe": "98.5",
             "Cr": "0",
             "Ni": "0",
@@ -1560,8 +1496,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "99.64",
         },
-        {
-            "Alloys": "IN600",
+        "IN600": {
             "Fe": "8",
             "Cr": "15.5",
             "Ni": "74.4",
@@ -1584,8 +1519,7 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-        {
-            "Alloys": "Nb",
+        "Nb": {
             "Fe": "0",
             "Cr": "0",
             "Ni": "0",
@@ -1608,4 +1542,4 @@ def alloy_compositions() -> list[dict[str, str]]:
             "Sc": "0",
             "": "100",
         },
-    ]
+    }
