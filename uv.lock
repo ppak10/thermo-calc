@@ -418,6 +418,21 @@ wheels = [
 ]
 
 [[package]]
+name = "out-workspace"
+version = "0.0.9"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "mcp" },
+    { name = "pydantic" },
+    { name = "rich" },
+    { name = "typer" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/71/69/dd9cc730336f3a5347bbe7ca4145f3ac6ed2368c96edc9ab973e99d9e6e8/out_workspace-0.0.9.tar.gz", hash = "sha256:cb4e6ec59f4256f596348117c127e87fcc797f06d32c177e0894887107ec945a", size = 12309, upload-time = "2025-09-17T17:30:36.742Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d1/12/7d99a41d466901ea511851ad49d6cbe70697b0a7947f91bd87c13a298326/out_workspace-0.0.9-py3-none-any.whl", hash = "sha256:1e85581d831d360e35ba0a84363c45b622edd7d5e3d6d200a4f82bb0e7fb7fcc", size = 18924, upload-time = "2025-09-17T17:30:35.996Z" },
+]
+
+[[package]]
 name = "packaging"
 version = "25.0"
 source = { registry = "https://pypi.org/simple" }
@@ -469,6 +484,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/5a/cb/e6ffaf3d019e8501b1264dac529bf829ac2f1fe1d488cfcf67f1fccadacf/pint-0.25.tar.gz", hash = "sha256:22911a30d682ee0540d656571c19a7b1806ce00b2be88a16f67218108b7b8cc2", size = 253010, upload-time = "2025-08-15T19:49:12.72Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/76/cc/c528311d798e22ec884b816e8aa2989e0f1f28cdc8e5969e2be5f10bce85/pint-0.25-py3-none-any.whl", hash = "sha256:cc20ae3dff010b9bbea41fb80c2de008f683cc83512cea73633d55aead80aa1e", size = 305462, upload-time = "2025-08-15T19:49:11.083Z" },
+]
+
+[[package]]
+name = "pintdantic"
+version = "0.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pint", version = "0.24.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "pint", version = "0.25", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "pydantic" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/49/69/9ffdf5c77edaa9997b7803d7c30ce40f2bf42977c259ba92ff9a4e870a6b/pintdantic-0.0.0.tar.gz", hash = "sha256:d1b2bbf662a73bbf063d7107bad7861a21cd05f2fc813269fb8796640461542d", size = 1749, upload-time = "2025-09-15T19:02:07.613Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/69/8f/4bc793c099b5fe97edf794d9622958e2aebeb0ca7518cd8da7bee14944a1/pintdantic-0.0.0-py3-none-any.whl", hash = "sha256:adac9c4af3d9e3a3fddd2e61e7b57ccca4df635eaa97549c3ef4bede8659e7ad", size = 2158, upload-time = "2025-09-15T19:02:06.755Z" },
 ]
 
 [[package]]
@@ -953,12 +982,14 @@ wheels = [
 
 [[package]]
 name = "thermo-calc"
-version = "0.0.0"
+version = "0.0.3"
 source = { virtual = "." }
 dependencies = [
     { name = "mcp" },
+    { name = "out-workspace" },
     { name = "pint", version = "0.24.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "pint", version = "0.25", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "pintdantic" },
     { name = "pydantic" },
     { name = "rich" },
     { name = "typer" },
@@ -976,7 +1007,9 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "mcp", specifier = ">=1.14.0" },
+    { name = "out-workspace", specifier = ">=0.0.9" },
     { name = "pint", specifier = ">=0.24.4" },
+    { name = "pintdantic", specifier = ">=0.0.0" },
     { name = "pydantic", specifier = ">=2.11.9" },
     { name = "rich", specifier = ">=14.1.0" },
     { name = "typer", specifier = ">=0.17.4" },

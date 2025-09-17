@@ -16,10 +16,10 @@ def register_alloy_list(app: typer.Typer):
     @app.command(name="list")
     def alloy_list() -> None:
         """List known alloys."""
-        from tc.alloy.alloy_list import alloy_names
+        from tc.alloy.known_alloy import get_known_alloy_names
 
         try:
-            names = alloy_names()
+            names = get_known_alloy_names()
             print_list("Known Alloys", names)
         except:
             rprint("⚠️  [yellow]Unable to list known alloys[/yellow]")

@@ -1,6 +1,9 @@
 from typing import Any, TypeVar, Generic
 from pydantic import BaseModel
 
+from typing_extensions import TypeVar
+
+
 # Generic type for the success data
 T = TypeVar("T")
 

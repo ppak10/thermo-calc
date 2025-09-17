@@ -1,4 +1,4 @@
-from .alloy_list import register_alloy_list
-from .alloy_composition import register_alloy_composition
+from .known_alloy import register_alloy_known_alloy
+from .resources import register_alloy_resources
 
-__all__ = ["register_alloy_list", "register_alloy_composition"]
+__all__ = ["register_alloy_known_alloy", "register_alloy_resources"]

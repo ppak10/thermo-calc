@@ -8,10 +8,12 @@ def register_schema_composition(app: FastMCP):
 
     @app.tool(
         title="Composition Schema",
-        description="Creates a composition schema object given a set of elements and their compositions",
+        description="Creates a composition schema object given a set of elements and their compositions and saves to a given workspace. Inputs to composition should be a fraction (i.e. 95% Fe and 5% C would expect to have inputs of 0.95 Fe and 0.05 C)",
         structured_output=True,
     )
     def schema_composition(
+        workspace_name: str,
+        name: str,
         Fe: float | None = None,
         C: float | None = None,
         # TCFe alloys
@@ -77,10 +79,20 @@ def register_schema_composition(app: FastMCP):
         Creates a configuration file for material properties.
         """
 
+        from ow.cli.utils import get_workspace_path
+
         try:
+            workspace_path = get_workspace_path(workspace_name)
+
             # Only include arguments that are not None
-            values = {k: v for k, v in locals().items() if v is not None}
+            values = {
+                k: v
+                for k, v in locals().items()
+                if v is not None and k not in ["workspace_name", "name"]
+            }
             composition = Composition(**values)
+            composition_path = workspace_path / "compositions" / f"{name}.json"
+            composition.save(composition_path)
 
             return tool_success(composition)
 

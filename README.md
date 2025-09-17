@@ -1,2 +1,2 @@
-# thermocalc
-Wrapper around Thermocalc's TC-Python SDK
+# thermo-calc
+Wrapper around Thermo-calc's TC-Python SDK

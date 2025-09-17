@@ -1,7 +1,9 @@
 from pydantic import BaseModel
+from pathlib import Path
 
 
 class Composition(BaseModel):
+
     # Base elements
     Fe: float | None = None
     C: float | None = None
@@ -67,3 +69,14 @@ class Composition(BaseModel):
 
     # TCHEA7
     Ir: float | None = None
+
+    def save(self, path: Path) -> Path:
+        """Save model to a JSON file."""
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(self.model_dump_json(indent=2))
+        return path
+
+    @classmethod
+    def load(cls, path: Path) -> "Composition":
+        """Load model from a JSON file."""
+        return cls.model_validate_json(path.read_text())
