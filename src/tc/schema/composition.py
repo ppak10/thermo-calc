@@ -3,6 +3,7 @@ from pathlib import Path
 
 
 class Composition(BaseModel):
+    name: str
 
     # Base elements
     Fe: float | None = None
@@ -80,3 +81,11 @@ class Composition(BaseModel):
     def load(cls, path: Path) -> "Composition":
         """Load model from a JSON file."""
         return cls.model_validate_json(path.read_text())
+
+    def elements(self) -> list[str]:
+        """Return a list of elements that have non-None values."""
+        return [k for k, v in self if k != "name" and v is not None]
+
+    def fractions(self) -> dict[str, float]:
+        """Return a dict of element → value (excluding 'name')."""
+        return {k: v for k, v in self if k != "name" and v is not None}

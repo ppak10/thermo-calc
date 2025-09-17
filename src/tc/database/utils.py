@@ -6,7 +6,7 @@ def select_thermocalc_database(composition: Composition) -> str:
     Selects the most appropriate thermo-calc database based on composition
     """
     # Convert the Composition object to a dict and remove None values
-    fractions = {k: v for k, v in composition.model_dump().items() if v is not None}
+    fractions = composition.fractions()
 
     if not fractions:
         return "PURE5"  # fallback if no elements are set

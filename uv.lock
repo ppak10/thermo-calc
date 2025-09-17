@@ -488,16 +488,16 @@ wheels = [
 
 [[package]]
 name = "pintdantic"
-version = "0.0.0"
+version = "0.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pint", version = "0.24.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "pint", version = "0.25", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "pydantic" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/49/69/9ffdf5c77edaa9997b7803d7c30ce40f2bf42977c259ba92ff9a4e870a6b/pintdantic-0.0.0.tar.gz", hash = "sha256:d1b2bbf662a73bbf063d7107bad7861a21cd05f2fc813269fb8796640461542d", size = 1749, upload-time = "2025-09-15T19:02:07.613Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/83/d4/31c5242e9932e126125096e22cdbfc29aa930cd5eb2129cc9fbd82b2f55d/pintdantic-0.0.1.tar.gz", hash = "sha256:ccb729b94d7a15959e8bc13142bb71ccc2d374c6ff7778d96dd3d2baa81c24b4", size = 4804, upload-time = "2025-09-17T21:28:50.712Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/69/8f/4bc793c099b5fe97edf794d9622958e2aebeb0ca7518cd8da7bee14944a1/pintdantic-0.0.0-py3-none-any.whl", hash = "sha256:adac9c4af3d9e3a3fddd2e61e7b57ccca4df635eaa97549c3ef4bede8659e7ad", size = 2158, upload-time = "2025-09-15T19:02:06.755Z" },
+    { url = "https://files.pythonhosted.org/packages/a3/82/14ea72181ba37f7dcc526efe9c41d42a27f4cececedbc66c28f7ec3af6a2/pintdantic-0.0.1-py3-none-any.whl", hash = "sha256:3583c9be6a5ff38be2555a0782113f432e652271721203f67d7c1e43f50129e9", size = 5731, upload-time = "2025-09-17T21:28:49.793Z" },
 ]
 
 [[package]]
