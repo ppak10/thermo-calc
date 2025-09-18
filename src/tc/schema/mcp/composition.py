@@ -88,7 +88,7 @@ def register_schema_composition(app: FastMCP):
             values = {
                 k: v
                 for k, v in locals().items()
-                if v is not None and k not in ["workspace_name", "name"]
+                if v is not None and k not in ["workspace_name"]
             }
             composition = Composition(**values)
             composition_path = workspace_path / "compositions" / f"{name}.json"

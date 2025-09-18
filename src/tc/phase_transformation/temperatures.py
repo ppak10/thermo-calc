@@ -1,3 +1,5 @@
+import math
+
 from pint import Quantity
 from tc_python import (
     CalculationAxis,
@@ -11,12 +13,14 @@ from typing_extensions import cast
 from tc.database.utils import select_thermocalc_database
 from tc.schema import Composition, PhaseTransformationTemperatures
 
-T_AXIS_MIN = 500.0
-T_AXIS_MAX = 3500.0
+TEMPERATURE_MIN = 500.0
+TEMPERATURE_MAX = 3500.0
 
 
 def compute_phase_transformation_temperatures(
     composition: Composition,
+    temperature_min=TEMPERATURE_MIN,
+    temperature_max=TEMPERATURE_MAX,
 ) -> PhaseTransformationTemperatures:
     """
     Uses Thermo-Calc to compute solidus & liquidus from elements/fractions.
@@ -37,8 +41,8 @@ def compute_phase_transformation_temperatures(
             .with_property_diagram_calculation()
             .with_axis(
                 CalculationAxis(ThermodynamicQuantity.temperature())
-                .set_min(T_AXIS_MIN)
-                .set_max(T_AXIS_MAX)
+                .set_min(temperature_min)
+                .set_max(temperature_max)
                 .with_axis_type(Linear().set_min_nr_of_steps(50))
             )
         )
@@ -48,6 +52,8 @@ def compute_phase_transformation_temperatures(
             calc.set_condition(f"W({el})", wf)
 
         diagram = calc.calculate()
+
+        print(diagram)
         diagram.set_phase_name_style(PhaseNameStyle.ALL)
 
         groups = diagram.get_values_grouped_by_quantity_of(
@@ -61,24 +67,37 @@ def compute_phase_transformation_temperatures(
     for group in groups.values():
         xT = group.x
         yL = group.y
-        last_zero_idx = max(
-            (i for i, y in enumerate(yL) if abs(y) < 1e-12), default=None
-        )
-        first_one_idx = None
-        if last_zero_idx is not None:
-            for i in range(last_zero_idx + 1, len(yL)):
-                if abs(yL[i] - 1.0) < 1e-12:
-                    first_one_idx = i
-                    break
-        if last_zero_idx is not None:
-            solidus_T = xT[last_zero_idx]
-        if first_one_idx is not None:
-            liquidus_T = xT[first_one_idx]
 
-    if solidus_T is None or liquidus_T is None:
+        # Find solidus: last temperature where liquid fraction is essentially 0
+        for i in range(len(yL)):
+            if yL[i] > 1e-6:  # First point where liquid starts forming
+                solidus_T = xT[i - 1] if i > 0 else xT[i]
+                break
+
+        # Find liquidus: first temperature where liquid fraction is essentially 1
+        for i in range(len(yL)):
+            if abs(yL[i] - 1.0) < 1e-6:  # First point where it's fully liquid
+                liquidus_T = xT[i]
+                break
+
+    if solidus_T is None and liquidus_T is None:
         raise RuntimeError(
-            f"Could not determine solidus/liquidus using {database} "
-            f"in range [{T_AXIS_MIN:.1f}, {T_AXIS_MAX:.1f}] K."
+            f"Could not determine solidus and liquidus temperatures within range [{temperature_min:.1f}, {temperature_max:.1f}] K. Potentially an invalid composition, please try a different composition."
+        )
+
+    if solidus_T is None:
+        raise RuntimeError(
+            f"Could not determine solidus temperatrue within range [{temperature_min:.1f}, {temperature_max:.1f}] K. Potentially an invalid composition, please try a different composition."
+        )
+
+    if liquidus_T is None:
+        raise RuntimeError(
+            f"Could not determine liquidus temperatrue within range [{temperature_min:.1f}, {temperature_max:.1f}] K. Potentially an invalid composition, please try a different composition."
+        )
+
+    if math.isnan(solidus_T) or math.isnan(liquidus_T):
+        raise RuntimeError(
+            f"Encountered invalid liquidus / solidus temperature values. Potentially an invalid composition, please try a different composition."
         )
 
     temperature_melt = cast(Quantity, Quantity((liquidus_T + solidus_T) / 2, "K"))

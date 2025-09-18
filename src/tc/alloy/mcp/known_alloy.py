@@ -33,7 +33,7 @@ def register_alloy_known_alloy(app: FastMCP):
         try:
             workspace_path = get_workspace_path(workspace_name)
             composition = get_known_alloy_composition(alloy)
-            composition_path = workspace_path / "composition" / f"{alloy.name}.json"
+            composition_path = workspace_path / "compositions" / f"{alloy.name}.json"
             composition.save(composition_path)
 
             return tool_success(composition)

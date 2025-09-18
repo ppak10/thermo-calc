@@ -38,7 +38,7 @@ def get_known_alloy_composition(alloy: Alloy) -> Composition:
         else:
             fractions = {el: wt / total for el, wt in out.items()}
         fractions = dict(sorted(fractions.items(), key=lambda kv: kv[1], reverse=True))
-        return Composition(**fractions)
+        return Composition(name=alloy.name, **fractions)
 
     else:
         raise ValueError(f"No numeric composition fields found for '{alloy}'.")
