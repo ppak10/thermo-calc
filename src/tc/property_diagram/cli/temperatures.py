@@ -5,31 +5,32 @@ from rich import print as rprint
 from ow.cli.options import WorkspaceOption
 
 
-def register_phase_transformation_temperatures(app: typer.Typer):
-    from tc.schema.composition import Composition
+def register_compute_temperatures(app: typer.Typer):
 
-    @app.command(name="temperatures")
-    def phase_transformation_temperatures(
-        composition_filename: str,
+    @app.command(name="compute-temperatures")
+    def compute_temperatures(
+        property_diagram_name: str,
         workspace: WorkspaceOption = None,
     ) -> None:
         """List known alloy composition."""
-        from tc.phase_transformation.temperatures import (
-            compute_phase_transformation_temperatures,
-        )
+        from tc.property_diagram.temperatures import compute_temperatures
+
         from ow.cli.utils import get_workspace_path
 
         workspace_path = get_workspace_path(workspace)
 
-        composition_path = workspace_path / "compositions" / composition_filename
-        composition = Composition.load(composition_path)
-
+        property_diagram_path = (
+            workspace_path / "property_diagrams" / property_diagram_name
+        )
+        result_path = property_diagram_path / "result"
         phase_transformation_temperatures_path = (
-            workspace_path / "phase_transformation_temperatures" / composition_filename
+            property_diagram_path / "temperatures.json"
         )
 
         try:
-            temperatures = compute_phase_transformation_temperatures(composition)
+            temperatures = compute_temperatures(
+                name=property_diagram_name, result_path=result_path
+            )
             temperatures.save(phase_transformation_temperatures_path)
             rprint(
                 f"✅ [bold green]Phase transformation temperatures saved successfully[/bold green] → {phase_transformation_temperatures_path}"
@@ -40,4 +41,4 @@ def register_phase_transformation_temperatures(app: typer.Typer):
             rprint(f"[yellow]Encountered Error: {e}[/yellow]")
             _ = typer.Exit()
 
-    _ = phase_transformation_temperatures
+    _ = compute_temperatures
