@@ -109,7 +109,7 @@ def register_property_diagram_compile_material(app: FastMCP):
                 specific_heat_capacity=(cp, "joules / (kilogram * kelvin)"),
                 absorptivity=(absorptivity, "dimensionless"),
                 thermal_conductivity=(thermal_conductivity, "watts / (meter * kelvin)"),
-                density=(density, "kilogram / (meter) ** 3"),
+                density=(density, "gram / (meter) ** 3"),
                 temperature_melt=temperatures.temperature_melt,
                 temperature_liquidus=temperatures.temperature_liquidus,
                 temperature_solidus=temperatures.temperature_solidus,
