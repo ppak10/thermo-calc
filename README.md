@@ -1,3 +1,6 @@
+[![pytest](https://github.com/ppak10/thermo-calc/actions/workflows/pytest.yml/badge.svg)](https://github.com/ppak10/thermo-calc/actions/workflows/pytest.yml)
+[![codecov](https://codecov.io/github/ppak10/thermo-calc/graph/badge.svg?token=YOM2JAD766)](https://codecov.io/github/ppak10/thermo-calc)
+
 # thermo-calc
 Wrapper around Thermo-calc's TC-Python SDK
 
