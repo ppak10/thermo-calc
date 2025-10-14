@@ -418,21 +418,6 @@ wheels = [
 ]
 
 [[package]]
-name = "out-workspace"
-version = "0.0.9"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "mcp" },
-    { name = "pydantic" },
-    { name = "rich" },
-    { name = "typer" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/71/69/dd9cc730336f3a5347bbe7ca4145f3ac6ed2368c96edc9ab973e99d9e6e8/out_workspace-0.0.9.tar.gz", hash = "sha256:cb4e6ec59f4256f596348117c127e87fcc797f06d32c177e0894887107ec945a", size = 12309, upload-time = "2025-09-17T17:30:36.742Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/d1/12/7d99a41d466901ea511851ad49d6cbe70697b0a7947f91bd87c13a298326/out_workspace-0.0.9-py3-none-any.whl", hash = "sha256:1e85581d831d360e35ba0a84363c45b622edd7d5e3d6d200a4f82bb0e7fb7fcc", size = 18924, upload-time = "2025-09-17T17:30:35.996Z" },
-]
-
-[[package]]
 name = "packaging"
 version = "25.0"
 source = { registry = "https://pypi.org/simple" }
@@ -986,13 +971,13 @@ version = "0.0.9"
 source = { virtual = "." }
 dependencies = [
     { name = "mcp" },
-    { name = "out-workspace" },
     { name = "pint", version = "0.24.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "pint", version = "0.25", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "pintdantic" },
     { name = "pydantic" },
     { name = "rich" },
     { name = "typer" },
+    { name = "workspace-agent" },
 ]
 
 [package.dev-dependencies]
@@ -1007,12 +992,12 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "mcp", specifier = ">=1.14.0" },
-    { name = "out-workspace", specifier = ">=0.0.9" },
     { name = "pint", specifier = ">=0.24.4" },
     { name = "pintdantic", specifier = ">=0.0.0" },
     { name = "pydantic", specifier = ">=2.11.9" },
     { name = "rich", specifier = ">=14.1.0" },
     { name = "typer", specifier = ">=0.17.4" },
+    { name = "workspace-agent", specifier = ">=0.0.2" },
 ]
 
 [package.metadata.requires-dev]
@@ -1126,4 +1111,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/1c/14/37fcdba2808a6c615681cd216fecae00413c9dab44fb2e57805ecf3eaee3/virtualenv-20.34.0.tar.gz", hash = "sha256:44815b2c9dee7ed86e387b842a84f20b93f7f417f95886ca1996a72a4138eb1a", size = 6003808, upload-time = "2025-08-13T14:24:07.464Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/76/06/04c8e804f813cf972e3262f3f8584c232de64f0cde9f703b46cf53a45090/virtualenv-20.34.0-py3-none-any.whl", hash = "sha256:341f5afa7eee943e4984a9207c025feedd768baff6753cd660c857ceb3e36026", size = 5983279, upload-time = "2025-08-13T14:24:05.111Z" },
+]
+
+[[package]]
+name = "workspace-agent"
+version = "0.0.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "mcp" },
+    { name = "pydantic" },
+    { name = "rich" },
+    { name = "typer" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f5/5e/442b9f064754c25ef2310614c32003772b404b7843cff70f4f39226e94c0/workspace_agent-0.0.2.tar.gz", hash = "sha256:85a3bfa1d39835b230dd89afa2c6585e8ae1fb7b139f012c64b5b0d2b5b1ac83", size = 12767, upload-time = "2025-10-13T20:06:52.307Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f8/4a/8301f0adc17b51795205b77adbc49768110e0543e2c6d97efb7b6d6f74a6/workspace_agent-0.0.2-py3-none-any.whl", hash = "sha256:1eb267e95682126db135046a2fe9e4362ef4389ccf7a00aedb2bafaf6ca7dbcc", size = 18914, upload-time = "2025-10-13T20:06:51.533Z" },
 ]

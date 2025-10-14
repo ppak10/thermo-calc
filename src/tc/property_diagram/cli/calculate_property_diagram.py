@@ -1,17 +1,13 @@
 import typer
-import pickle
 
 from rich import print as rprint
 
-from ow.cli.options import WorkspaceOption
+from wa.cli.options import WorkspaceOption
 
 
 def register_property_diagram_calculate(app: typer.Typer):
     from tc.schema.composition import Composition
-    from tc.property_diagram.calculate_property_diagram import (
-        TEMPERATURE_MAX,
-        TEMPERATURE_MIN,
-    )
+    from tc.property_diagram.defaults import TEMPERATURE_MAX, TEMPERATURE_MIN
 
     @app.command(name="calculate")
     def property_diagram_calculate(
@@ -24,7 +20,7 @@ def register_property_diagram_calculate(app: typer.Typer):
         from tc.property_diagram.calculate_property_diagram import (
             calculate_property_diagram,
         )
-        from ow.cli.utils import get_workspace_path
+        from wa.cli.utils import get_workspace_path
 
         workspace_path = get_workspace_path(workspace)
 

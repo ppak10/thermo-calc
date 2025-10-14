@@ -13,9 +13,7 @@ from typing_extensions import cast
 from tc.database.utils import select_thermocalc_database
 from tc.schema import Composition
 
-TEMPERATURE_MIN = 500.0
-TEMPERATURE_MAX = 3500.0
-MIN_STEPS = 50
+from .defaults import TEMPERATURE_MIN, TEMPERATURE_MAX, MIN_STEPS
 
 
 def calculate_property_diagram(

@@ -26,7 +26,7 @@ def register_property_diagram_compile_material(app: FastMCP):
         from tc_python import ThermodynamicQuantity
         from typing_extensions import cast
 
-        from ow.cli.utils import get_workspace_path
+        from wa.cli.utils import get_workspace_path
 
         workspace_path = get_workspace_path(workspace_name)
 

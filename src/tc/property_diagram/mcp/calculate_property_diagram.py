@@ -26,7 +26,7 @@ def register_property_diagram_calculate(app: FastMCP):
             calculate_property_diagram,
         )
 
-        from ow.cli.utils import get_workspace_path
+        from wa.cli.utils import get_workspace_path
 
         workspace_path = get_workspace_path(workspace_name)
 

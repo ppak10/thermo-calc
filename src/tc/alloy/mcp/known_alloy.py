@@ -28,7 +28,7 @@ def register_alloy_known_alloy(app: FastMCP):
         workspace_name: str, alloy: Alloy
     ) -> ToolSuccess[Composition | None] | ToolError:
         from tc.alloy.known_alloy import get_known_alloy_composition
-        from ow.cli.utils import get_workspace_path
+        from wa.cli.utils import get_workspace_path
 
         try:
             workspace_path = get_workspace_path(workspace_name)

@@ -79,7 +79,7 @@ def register_schema_composition(app: FastMCP):
         Creates a configuration file for material properties.
         """
 
-        from ow.cli.utils import get_workspace_path
+        from wa.cli.utils import get_workspace_path
 
         try:
             workspace_path = get_workspace_path(workspace_name)

@@ -3,12 +3,14 @@ import typer
 
 from rich.console import Console
 from rich import print as rprint
+from .tc_python_check import warn_tc_python_not_installed
 
 app = typer.Typer(
     name="thermo-calc",
     help="Thermo-Calc Tools",
     add_completion=False,
     no_args_is_help=True,
+    callback=lambda: warn_tc_python_not_installed(),
 )
 
 

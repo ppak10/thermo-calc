@@ -18,7 +18,7 @@ def register_property_diagram_compute_resistivity_at_temperature(app: FastMCP):
     ) -> ToolSuccess[Path] | ToolError:
         from tc.property_diagram.resistivity import compute_resistivity_at_temperature
 
-        from ow.cli.utils import get_workspace_path
+        from wa.cli.utils import get_workspace_path
 
         workspace_path = get_workspace_path(workspace_name)
 

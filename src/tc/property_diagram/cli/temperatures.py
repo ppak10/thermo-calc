@@ -2,7 +2,7 @@ import typer
 
 from rich import print as rprint
 
-from ow.cli.options import WorkspaceOption
+from wa.cli.options import WorkspaceOption
 
 
 def register_compute_temperatures(app: typer.Typer):
@@ -15,7 +15,7 @@ def register_compute_temperatures(app: typer.Typer):
         """List known alloy composition."""
         from tc.property_diagram.temperatures import compute_temperatures
 
-        from ow.cli.utils import get_workspace_path
+        from wa.cli.utils import get_workspace_path
 
         workspace_path = get_workspace_path(workspace)
 

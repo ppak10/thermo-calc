@@ -9,12 +9,12 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "mcp>=1.14.0",
-    "out-workspace>=0.0.9",
     "pint>=0.24.4",
     "pintdantic>=0.0.0",
     "pydantic>=2.11.9",
     "rich>=14.1.0",
     "typer>=0.17.4",
+    "workspace-agent>=0.0.2",
 ]
 
 [project.urls]
@@ -23,6 +23,7 @@ Issues = "https://github.com/ppak10/thermo-calc/issues"
 
 [project.scripts]
 tc = "tc.cli:app"
+tcalc = "tc.cli:app"
 
 [tool.setuptools.package-data]
 "tc.data" = ["**/*.md"]
