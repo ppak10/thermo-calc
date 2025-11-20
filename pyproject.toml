@@ -1,6 +1,6 @@
 [project]
 name = "thermo-calc"
-version = "0.0.10"
+version = "0.0.11"
 authors = [
   { name = "Peter Pak", email = "ppak10@gmail.com" },
 ]
@@ -14,11 +14,11 @@ dependencies = [
     "pydantic>=2.11.9",
     "rich>=14.1.0",
     "typer>=0.17.4",
-    "workspace-agent>=0.0.2",
+    "workspace-agent>=0.1.4",
 ]
 
 [project.urls]
-Homepage = "https://github.com/ppak10/thermocalc"
+Homepage = "https://github.com/ppak10/thermo-calc"
 Issues = "https://github.com/ppak10/thermo-calc/issues"
 
 [project.scripts]

@@ -69,3 +69,9 @@ error: Failed to install: tc_python-2025.2-30-py3-none-any.whl (tc-python==2025.
 ```
 
 you need to change the `-` to a `.` by renaming `TC_Python-2025.2-30-py3-none-any.whl` to `TC_Python-2025.2.30-py3-none-any.whl`.
+
+### `JAVA_HOME` not found
+You'll need to set this if you installed java via brew
+```bash
+echo export "JAVA_HOME=\$(/opt/homebrew/opt/openjdk)" >> ~/.zshrc
+```
