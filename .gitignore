@@ -210,5 +210,9 @@ dev
 out
 
 .claude
+.vscode
+.gemini
 
 cache/
+
+workspaces
